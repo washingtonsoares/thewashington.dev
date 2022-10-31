@@ -1,37 +1,51 @@
-# thewashington.dev
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fleerob.io&env=NEXT_PUBLIC_SANITY_PROJECT_ID,NEXT_PUBLIC_SANITY_DATASET,SANITY_API_TOKEN,SANITY_PREVIEW_SECRET,SANITY_STUDIO_REVALIDATE_SECRET&envDescription=These%20values%20are%20needed%20to%20connect%20to%20Sanity%20and%20fetch%20content%20for%20blog%20posts.)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Netlify Status](https://api.netlify.com/api/v1/badges/0a51d0e9-f611-4dd8-887f-fc1889e68540/deploy-status)](https://app.netlify.com/sites/tania/deploys)
+# leerob.io
 
-Washington's personal website running on Gatsby, React, and Node.js.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://prisma.io/)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **CMS**: [Sanity](https://www.sanity.io/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 
-## Note
+## Learn More
 
-I've made my website open source for your inspiration, motivation, and curiosity. However, this site is highly customized and personally tailored, and it is not simply a theme. **I encourage you to be creative and create your own theme, design, and content.**
+I've recorded two live streams walking through this repository and answering questions.
 
-The [Gatsby Advanced Starter](https://github.com/vagr9k/gatsby-advanced-starter/) is a great place to start, and is the base for this blog.
+- [Stream #2 – Nov 10, 2021 (1h 4min)](https://www.youtube.com/watch?v=WZZFW5xDjJ4)
+  - [Browse repository](https://github.com/leerob/leerob.io/tree/747479118497d31433cb78ced5c1628ed5d1583b) at this point in time.
+- [Stream #1 – Jan 27, 2021 (1h 11min)](https://www.youtube.com/watch?v=xXQsF0q8KUg)
+  - [Browse repository](https://github.com/leerob/leerob.io/tree/568df6d056a4f7ea6f10fab07786c8ec6cbbddde) at this point in time.
 
-## Features
+## Overview
 
-- Posts and pages in Markdown
-- Tags and categories
-- Night mode
-- DOS mode (404)
-- Code theme (starring 
-- Sass (starring  
+- `layouts/*` - The different page layouts each MDX category (blog, snippets) uses.
+- `lib/*` - Short for "library", a collection of helpful utilities or code for external services.
+- `pages/api/*` - [API Routes](https://nextjs.org/docs/api-routes/introduction) powering [`/dashboard`](https://leerob.io/dashboard), newsletter subscription, guestbook, and post views.
+- `pages/blog/*` - Static pre-rendered blog pages using MDX.
+- `pages/dashboard` - [Personal dashboard](https://leerob.io/dashboard) tracking metrics.
+- `pages/sitemap.xml.tsx` - Automatically generated sitemap.
+- `pages/feed.xml.tsx` - Automatically generated RSS feed.
+- `pages/*` - All other static pages.
+- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 
-## Contributing
+## Running Locally
 
-If you see any typos or formatting errors in a post, or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!
+This application requires Node.js v16.13+.
 
-## Acknowledgements
+```bash
+git clone https://github.com/leerob/leerob.io.git
+cd leerob.io
+pnpm install
+pnpm dev
+```
 
-- Ruben Harutyunyan - [Tania Rascia](https://github.com/taniarascia)
- 
+Create a `.env` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
 
-## Author
+## Cloning / Forking
 
-- [Washington Soares](https://thewashington.dev)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
+Please review the [license](https://github.com/leerob/leerob.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
